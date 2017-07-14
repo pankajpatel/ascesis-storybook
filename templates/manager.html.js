@@ -55,7 +55,9 @@ module.exports = (scope) => `
       </a>
       <iframe id="preview-frame" src="/preview.html"></iframe>
     </div>
-    <div id="info-block" class="split content"></div>
+    <div id="info-block" class="split content">
+      <ul></ul>
+    </div>
   </div>
 
   ${scope.assets.filter(path => path.endsWith('.js'))

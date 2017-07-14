@@ -47,3 +47,10 @@ router.add('/', () => {
 });
 
 router.resolve();
+
+const infoBlock = document.querySelector('#info-block');
+
+channel.on('console.log', (data) => {
+  console.log(data)
+  infoBlock.querySelector('ul').innerHTML +=  `<li>${JSON.stringify(data)}</li>`
+})
