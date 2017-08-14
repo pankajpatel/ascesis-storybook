@@ -9,8 +9,12 @@ module.exports = () => `
       height: 100%;
     }
 
+    body *{
+      box-sizing: border-box;
+    }
     body {
       padding: 8px;
+      margin: 0;
       background-color: #F6F6F6;
       box-sizing: border-box;
     }

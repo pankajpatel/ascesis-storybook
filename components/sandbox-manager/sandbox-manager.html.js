@@ -1,4 +1,4 @@
-module.exports = (scope) => `
+module.exports = scope => `
   <style>
     .fullscreen-icon,
     .arrows-overlap {
@@ -49,10 +49,71 @@ module.exports = (scope) => `
       display: block;
       width: 100%;
       height: 100%;
+      box-sizing: border-box;
+    }
+    #right-panel stories-tree {
+      display: none;
+    }
+    #mobile-head {
+      display: none;
+    }
+    .shown {
+      display: block !important;
+    }
+    .hidden {
+      display: none !important;
+    }
+    @media screen and (max-width: 768px){
+      #mobile-head,
+      #right-panel stories-tree {
+        display: block !important;
+      }
+      .mobile-active #right-panel {
+        display: none !important;
+      }
+      .mobile-active #left-panel {
+        display: block !important;
+      }
+      .addon-active #right-panel {
+        display: none !important;
+      }
+      .addon-active #left-panel {
+        display: block !important;
+      }
+      #left-panel,
+      .gutter {
+        display: none !important;
+      }
+
+      #mobile-head {
+        padding: 5px;
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+      }
+      /*
+      #toggleMenu,
+      #toggleAddon {
+        position: absolute;
+      }
+      #toggleMenu {
+        left: 0;
+      }
+      #toggleAddon {
+        right: 0;
+      }
+      */
     }
   </style>
 
   <div id="left-panel" class="split split-horizontal left-panel">
+  <div id="mobile-head">Storybook
+    <button id="distractionFree">Distraction Free</button>
+    <span id="buttons" class="hidden">
+      <button id="toggleMenu">Toggle Menu</button>
+      <button id="toggleAddon">Toggle Addon</button>
+    </span>
+  </div>
   </div>
   <div id="right-panel" class="split split-horizontal right-panel">
   </div>
